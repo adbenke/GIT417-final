@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alexandra Benke">
+    <meta name="reference" content="https://www.kitkat.com/">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>GIT 417 Final - KitKat</title>
+</head>
+<body>
+    <header>
+        <img src="images/KitKat-logo.png" alt="KitKat logo with KitKat title in a white cirlce on a red background">
+        <h1>KitKat</h1>
+        <nav>
+            <ul>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <!-- light/ dark functionality -->
+    </header>
+    <main>
+        <section id="hero">
+            <img src="images/hero-image.gif" alt="cycle of images of KitKats like white and dark chocolate KitKats on a red background">
+        </section>
+        <section id="breakdown">
+            <h2>KitKat's Unique Taste and Technology</h2>
+            <section>
+                <img src="images/unique-shape.avif" alt="unwrapped KitKat chocolate bar on grey background">
+                <h3>Unique Shape</h3>
+                <p>Its iconic four-finger shape is made to snap, share, and savor</p>
+            </section>
+            <section>
+                <img src="images/crsipy-wafers.avif" alt="showing the 4 inside layers of a single KitKat bar on a grey background">
+                <h3>KitKat's Crsipy Wafers</h3>
+                <p>The harmony of soft chocolate and crispy wafers and optimum crispness</p>
+            </section>
+            <section>
+                <img src="images/crush-method.avif" alt="one KitKat bar broken in half with crumbs flying out on a grey background">
+                <h3>Crush and Spread Method</h3>
+                <p>Unique technology that brings out the crispy texture by putting thinly crushed biscuits between the chocolates</p>
+            </section>
+        </section>
+        <section id="product">
+            
+        </section>
+        <section id="game">
+            <div>
+                <h2>Have A Break, Win a KitKat!</h2>
+                <p>Enter a number between 1 and 11 in the box below and click the button to play. If your number matches, you win!</p>
+                <form>
+                    <label for="numGuess">Enter a Number Between 1 and 11:</label>
+                    <span class="message">Please enter a number from 1 to 11</span>
+                    <input type="number" name="numGuess" id="numGuess">
+                    <input type="submit" name="guessGame" id="guessGame" value="Play the Game!">
+                </form>
+                <section id="gameDisplay">
+                    <h3 class="sr-only">Guess a Number!</h3>
+                    <ul id="gameOutput">
+                        <li id="userNum"><span>5</span>Your Guess</li>
+                        <li id="randomNum"><span>11</span>Winning Number</li>
+                    </ul>
+                    <p id="gameMsg">Message about winning or losing the game</p>
+                </section>
+            </div>
+        </section>
+        <section id="connect">
+            <form>
+
+            </form>
+        </section>
+    </main>
+    <footer>
+        <!-- Nestle logo -->
+        <h4>Connect With Us</h4>
+        <!-- social media icons (look at GIT 414 activity) -->
+        <p>&copy; Nestlé Limited, all rights reserved.<br>
+        Coded by Alexandra Benke</p>
+    </footer>
+</body>
+</html>
