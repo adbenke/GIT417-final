@@ -67,10 +67,45 @@
                 </section>
             </div>
         </section>
-        <section id="connect">
-            <form>
+        <section id="form">
+            <h2>Connect With Us!</h2>
+            <p>Don't be shy, shoot us a message with quaestions for inquiries.<br>
+                Required fields are marked with an asterisk (*).</p>
+                <!--full name/ first and last seperately, phone number and email input, phone and email radio choice, comments -->
+            <form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="GET">
+                <label for="name">First Name<span class="required">*</span></label>
+                <span class="message">Please enter your first name</span>
+                <input type="text" id="firstName" name="firstName">
 
+                <label for="name">Last Name<span class="required">*</span></label>
+                <span class="message">Please enter your last name</span>
+                <input type="text" id="lastName" name="lastName">
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+
+                <fieldset>
+                    <legend>Preferred Method of Contact</legend>
+                    <label for="pref-email">Email</label>
+                    <input type="radio" id="pref-email" name="my-email" value="my-email">
+                    <label for="pref-phone">Phone</label>
+                    <input type="radio" id="pref-phone" name="phone" value="phone">
+                </fieldset>
+
+                <label for="comment">Comment<span class="required">*</span></label>
+                <span class="message">Please add a message</span>
+                <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+
+                <input type="submit" name="my-submit" id="my-submit" value="Submit Form">
             </form>
+            <section id="success" class="hide">
+                <h2>Thank you!</h2>
+                <p>You have successfully submitted the form. Here is the information you sent us:</p>
+                <p id="formSub"></p>
+            </section>
         </section>
     </main>
     <footer>
