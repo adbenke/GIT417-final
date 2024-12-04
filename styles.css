@@ -192,7 +192,9 @@ h3{
     'title title title'
     'item1 item2 item3';
     gap: 10px;
-    column-gap: 200px;
+    column-gap: 100px;
+    justify-content: center;
+    padding: 20px 0px;
 }
 
 #breakdown h2{
@@ -375,6 +377,11 @@ input:focus, textarea:focus{
 	gap: 1rem;
 	width: fit-content;
 	margin: 2rem auto;
+}
+
+#switcherButtons button:hover{
+	color:var(--brown);
+	background-color: var(--cream);
 }
 
 #products img{
