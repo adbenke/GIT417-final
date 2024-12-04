@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Alexandra Benke">
     <meta name="reference" content="https://www.kitkat.com/">
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <title>GIT 417 Final - KitKat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>KitKat</title>
 </head>
 <body>
     <header>
-        <img src="images/KitKat-logo.png" alt="KitKat logo with KitKat title in a white cirlce on a red background">
         <h1>KitKat</h1>
         <nav>
             <ul>
@@ -20,31 +20,24 @@
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
-        <!-- light/ dark functionality -->
+        <div id="theme-switch">
+            <div id="sun">
+                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="dark">
+                    <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div id="moon">
+                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="dark">
+                    <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
     </header>
     <main>
-        <section id="hero">
+        <div id="hero">
             <img src="images/hero-image.gif" alt="cycle of images of KitKats like white and dark chocolate KitKats on a red background">
-        </section>
-        <section id="breakdown">
-            <h2>KitKat's Unique Taste and Technology</h2>
-            <section>
-                <img src="images/unique-shape.avif" alt="unwrapped KitKat chocolate bar on grey background">
-                <h3>Unique Shape</h3>
-                <p>Its iconic four-finger shape is made to snap, share, and savor</p>
-            </section>
-            <section>
-                <img src="images/crsipy-wafers.avif" alt="showing the 4 inside layers of a single KitKat bar on a grey background">
-                <h3>KitKat's Crsipy Wafers</h3>
-                <p>The harmony of soft chocolate and crispy wafers and optimum crispness</p>
-            </section>
-            <section>
-                <img src="images/crush-method.avif" alt="one KitKat bar broken in half with crumbs flying out on a grey background">
-                <h3>Crush and Spread Method</h3>
-                <p>Unique technology that brings out the crispy texture by putting thinly crushed biscuits between the chocolates</p>
-            </section>
-        </section>
-        <section id="product">
+        </div>
+        <section id="products">
             <h2>Flavors of The Month</h2>
             <section id="product1" class="currentItem">
                 <h3>KitKat&reg; Pink Lemonade</h3>
@@ -68,10 +61,27 @@
                 <button id="btn3">Chocolate Frosted Donut</button>
             </section>
         </section>
+        <section id="breakdown">
+            <h2>KitKat's Unique Taste and Technology</h2>
+            <section class="item1">
+                <img src="images/unique-shape.avif" alt="unwrapped KitKat chocolate bar on grey background">
+                <h3>Unique Shape</h3>
+                <p>Its iconic four-finger shape is made to snap, share, and savor</p>
+            </section>
+            <section class="item2">
+                <img src="images/crsipy-wafers.avif" alt="showing the 4 inside layers of a single KitKat bar on a grey background">
+                <h3>KitKat's Crsipy Wafers</h3>
+                <p>The harmony of soft chocolate and crispy wafers and optimum crispness</p>
+            </section>
+            <section class="item3">
+                <img src="images/crush-method.avif" alt="one KitKat bar broken in half with crumbs flying out on a grey background">
+                <h3>Crush and Spread Method</h3>
+                <p>Unique technology that brings out the crispy texture by putting thinly crushed biscuits between the chocolates</p>
+            </section>
+        </section>
         <section id="game">
             <div>
                 <h2>Have A Break, Win a KitKat!</h2>
-                <p>Enter a number between 1 and 11 in the box below and click the button to play. If your number matches, you win!</p>
                 <form>
                     <label for="numGuess">Enter a Number Between 1 and 11:</label>
                     <span class="message">Please enter a number from 1 to 11</span>
@@ -79,36 +89,35 @@
                     <input type="submit" name="guessGame" id="guessGame" value="Play the Game!">
                 </form>
                 <section id="gameDisplay">
-                    <h3 class="sr-only">Guess a Number!</h3>
-                    <ul id="gameOutput">
-                        <li id="userNum"><span>5</span>Your Guess</li>
-                        <li id="randomNum"><span>11</span>Winning Number</li>
-                    </ul>
-                    <p id="gameMsg">Message about winning or losing the game</p>
+                    <h3>Guess a Number!</h3>
+                    <p>Enter a number between 1 and 11 in the box below and click the button to play. If your number matches, you win!</p>
+                    <p id="gameOutput"></p>
+                    <!-- "user" and "answer" -->
+                    <p id="userNum"><span>5</span>Your Guess</p>
+                    <p id="randomNum"><span>11</span>Winning Number</p>
                 </section>
             </div>
         </section>
-        <section id="form">
+        <section id="contact">
             <h2>Connect With Us!</h2>
             <p>Don't be shy, shoot us a message with quaestions for inquiries.<br>
                 Required fields are marked with an asterisk (*).</p>
-            <form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="GET">
-                <label for="name">First Name<span class="required">*</span></label>
-                <span class="message">Please enter your first name</span>
-                <input type="text" id="firstName" name="firstName">
+            <form id="contactUs" action="https://wp.zybooks.com/form-viewer.php" method="POST" target="_blank">
+                <label for="fullName">Full Name:<span class="required">*</span></label>
+                <input type="text" name="fName" id="fullName" class="">
+                <span id="fullNameError" class="hiddenItem">First and Last Name are required</span>
 
-                <label for="name">Last Name<span class="required">*</span></label>
-                <span class="message">Please enter your last name</span>
-                <input type="text" id="lastName" name="lastName">
+                <!-- "number" -->
+                <label for="phone">Phone Number:<span class="required" id="telReq"></span></label>
+                <input type="tel" name="phone" id="phone" class="">
+                <span id="telError" class="hiddenItem">Phone number is required</span>
 
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+                <label for="email">Email:<span class="required" id="emailReq">*</span></label>
+                <input type="email" name="email" id="email" class="">
+                <span id="emailError" class="hiddenItem">Email is required</span>
 
                 <fieldset>
-                    <legend>Preferred Method of Contact</legend>
+                    <legend>Preferred Method of Contact<span class="required">*</span></legend>
                     <label for="pref-email">Email</label>
                     <input type="radio" id="pref-email" name="my-email" value="my-email">
                     <label for="pref-phone">Phone</label>
@@ -129,9 +138,7 @@
         </section>
     </main>
     <footer>
-        <!-- Nestle logo -->
         <h4>Connect With Us</h4>
-        <!-- social media icons (look at GIT 414 activity) -->
         <p>&copy; Nestlé Limited, all rights reserved.<br>
         Coded by Alexandra Benke</p>
     </footer>
