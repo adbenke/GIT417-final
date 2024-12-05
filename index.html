@@ -12,6 +12,7 @@
 </head>
 <body>
     <header>
+        <img src="images/KitKat-logo.png" alt="KitKat logo with KitKat in red on a white background">
         <h1>KitKat</h1>
         <nav>
             <ul>
@@ -22,12 +23,12 @@
         </nav>
         <div id="theme-switch">
             <div id="sun">
-                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="dark">
+                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="dark-theme">
                     <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <div id="moon">
-                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="dark">
+                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="dark-theme">
                     <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
@@ -84,7 +85,6 @@
                 <h2>Have A Break, Win a KitKat!</h2>
                 <form>
                     <label for="numGuess">Enter a Number Between 1 and 11:</label>
-                    <span class="message">Please enter a number from 1 to 11</span>
                     <input type="number" name="numGuess" id="numGuess">
                     <input type="submit" name="guessGame" id="guessGame" value="Play the Game!">
                 </form>
@@ -92,53 +92,51 @@
                     <h3>Guess a Number!</h3>
                     <p>Enter a number between 1 and 11 in the box below and click the button to play. If your number matches, you win!</p>
                     <p id="gameOutput"></p>
-                    <!-- "user" and "answer" -->
-                    <p id="userNum"><span>5</span>Your Guess</p>
-                    <p id="randomNum"><span>11</span>Winning Number</p>
+                    <p id="userNum"></p>
+                    <p id="randomNum"></p>
                 </section>
             </div>
         </section>
         <section id="contact">
             <h2>Connect With Us!</h2>
-            <p>Don't be shy, shoot us a message with quaestions for inquiries.<br>
-                Required fields are marked with an asterisk (*).</p>
-            <form id="contactUs" action="https://wp.zybooks.com/form-viewer.php" method="POST" target="_blank">
+            <form id="form" action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="POST">
                 <label for="fullName">Full Name:<span class="required">*</span></label>
-                <input type="text" name="fName" id="fullName" class="">
-                <span id="fullNameError" class="hiddenItem">First and Last Name are required</span>
+                <input type="text" name="fullName" id="fullName"><p class="hidden">Please enter first and last name</p>
 
-                <!-- "number" -->
-                <label for="phone">Phone Number:<span class="required" id="telReq"></span></label>
-                <input type="tel" name="phone" id="phone" class="">
-                <span id="telError" class="hiddenItem">Phone number is required</span>
+                <label for="phone">Phone Number:<span class="required">*</span></label>
+                <input type="tel" name="phone" id="phone"><p class="hidden">Please enter a valid phone number</p>
 
-                <label for="email">Email:<span class="required" id="emailReq">*</span></label>
-                <input type="email" name="email" id="email" class="">
-                <span id="emailError" class="hiddenItem">Email is required</span>
+                <label for="email">Email Address:<span class="required">*</span></label>
+                <input type="email" name="email" id="email"><p class="hidden">Please enter a valid email address</p>
 
                 <fieldset>
-                    <legend>Preferred Method of Contact<span class="required">*</span></legend>
-                    <label for="pref-email">Email</label>
-                    <input type="radio" id="pref-email" name="my-email" value="my-email">
-                    <label for="pref-phone">Phone</label>
-                    <input type="radio" id="pref-phone" name="phone" value="phone">
+                    <legend> Preferred Method of Contact: <span class="required">*</span></legend>
+                    <label for="prefPhone" class="radio">
+                        <span class="radio_input">
+                        <input type="radio" name="pref" id="prefPhone" value="prefPhone" required checked>
+                        <span class="radio_control"></span>
+                        </span>
+                        <span class="radio_label">Phone</span>
+                    </label>
+                    <label for="prefEmail" class="radio">
+                        <span class="radio_input">
+                        <input type="radio" name="pref" id="prefEmail" value="prefEmail">
+                        <span class="radio_control"></span>
+                        </span>
+                        <span class="radio_label">Email</span>
+                    </label>
                 </fieldset>
+                <p id="coms" class="hidden"></p>
 
-                <label for="comment">Comment<span class="required">*</span></label>
-                <span class="message">Please add a message</span>
-                <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+                <label for="message">Message:<span class="required">*</span></label>
+                <input type="text" name="message" id="message"><p class="hidden">Please enter a message</p>
 
-                <input type="submit" name="my-submit" id="my-submit" value="Submit Form">
+                <input type="submit" id="mySubmit">
             </form>
-            <section id="success" class="hide">
-                <h2>Thank you!</h2>
-                <p>You have successfully submitted the form. Here is the information you sent us:</p>
-                <p id="formSub"></p>
-            </section>
+            <p id="confirm" class="hidden"></p>
         </section>
     </main>
     <footer>
-        <h4>Connect With Us</h4>
         <p>&copy; Nestlé Limited, all rights reserved.<br>
         Coded by Alexandra Benke</p>
     </footer>
